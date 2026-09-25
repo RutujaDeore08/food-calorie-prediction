@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+
+{% block title %}NutriCal AI | Smart Nutrition{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <span class="badge">✦ AI-POWERED NUTRITION PLATFORM</span>
+
+        <h1>
+            Understand Your Food.
+            <span>Improve Your Health.</span>
+        </h1>
+
+        <p>
+            NutriCal AI uses intelligent food analysis to estimate
+            calories, track meals, analyze nutrition and help you
+            achieve your health goals.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{{ url_for('calories') }}" class="primary-btn">
+                Start Analyzing →
+            </a>
+
+            <a href="{{ url_for('features') }}" class="secondary-btn">
+                Explore Features
+            </a>
+
+        </div>
+
+        <div class="stats">
+
+            <div>
+                <strong>AI</strong>
+                <small>Powered Analysis</small>
+            </div>
+
+            <div>
+                <strong>24/7</strong>
+                <small>Nutrition Tracking</small>
+            </div>
+
+            <div>
+                <strong>100%</strong>
+                <small>Responsive</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO CARD -->
+
+    <div class="hero-card">
+
+        <div class="floating-card card-one">
+            🔥 <b>1,840</b>
+            <small>Calories Today</small>
+        </div>
+
+        <div class="nutrition-circle">
+
+            <div>
+                <span>Daily</span>
+                <strong>72%</strong>
+                <small>Goal Complete</small>
+            </div>
+
+        </div>
+
+        <div class="macro-row">
+
+            <div>
+                <b>Protein</b>
+                <span>68g</span>
+            </div>
+
+            <div>
+                <b>Carbs</b>
+                <span>210g</span>
+            </div>
+
+            <div>
+                <b>Fat</b>
+                <span>52g</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES SECTION ================= -->
+
+<section class="home-features">
+
+    <div class="section-heading">
+
+        <span>WHAT WE OFFER</span>
+
+        <h2>
+            Everything You Need for Smarter Nutrition
+        </h2>
+
+        <p>
+            One simple platform to understand and manage your
+            daily nutrition.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <!-- AI CALORIE PREDICTION -->
+
+        <a href="{{ url_for('calories') }}" class="feature-card">
+
+            <div class="feature-icon">🔥</div>
+
+            <h3>
+                AI Calorie Prediction
+            </h3>
+
+            <p>
+                Estimate food calories using intelligent
+                analysis.
+            </p>
+
+            <span>
+                Explore →
+            </span>
+
+        </a>
+
+
+        <!-- MEAL DIARY -->
+
+        <a href="{{ url_for('meal_diary') }}" class="feature-card">
+
+            <div class="feature-icon">🍽️</div>
+
+            <h3>
+                Smart Meal Diary
+            </h3>
+
+            <p>
+                Maintain breakfast, lunch, dinner and
+                snack records.
+            </p>
+
+            <span>
+                Explore →
+            </span>
+
+        </a>
+
+
+        <!-- ANALYTICS -->
+
+        <a href="{{ url_for('analytics') }}" class="feature-card">
+
+            <div class="feature-icon">📊</div>
+
+            <h3>
+                Nutrition Analytics
+            </h3>
+
+            <p>
+                Visualize calories and macronutrients
+                using charts.
+            </p>
+
+            <span>
+                Explore →
+            </span>
+
+        </a>
+
+
+        <!-- FOOD ANALYSIS -->
+
+        <a href="{{ url_for('food_analysis') }}" class="feature-card">
+
+            <div class="feature-icon">🧠</div>
+
+            <h3>
+                Intelligent Food Analysis
+            </h3>
+
+            <p>
+                Analyze food information and nutritional
+                values.
+            </p>
+
+            <span>
+                Explore →
+            </span>
+
+        </a>
+
+
+        <!-- GOAL TRACKING -->
+
+        <a href="{{ url_for('goal') }}" class="feature-card">
+
+            <div class="feature-icon">🎯</div>
+
+            <h3>
+                Goal Tracking
+            </h3>
+
+            <p>
+                Track your nutrition goals and monitor
+                your progress.
+            </p>
+
+            <span>
+                Explore →
+            </span>
+
+        </a>
+
+
+        <!-- RESPONSIVE DESIGN -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">📱</div>
+
+            <h3>
+                Responsive Design
+            </h3>
+
+            <p>
+                Use NutriCal AI on laptop, tablet and
+                mobile devices.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta">
+
+    <div>
+
+        <span>
+            READY TO START?
+        </span>
+
+        <h2>
+            Make Every Meal Count.
+        </h2>
+
+        <p>
+            Start understanding your food with NutriCal AI.
+        </p>
+
+    </div>
+
+
+    <a href="{{ url_for('calories') }}" class="primary-btn">
+        Get Started →
+    </a>
+
+</section>
+
+
+{% endblock %}

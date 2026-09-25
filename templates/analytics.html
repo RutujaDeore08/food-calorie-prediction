@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrition Analytics | NutriCal AI{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <span>DATA & INSIGHTS</span>
+
+    <h1>Nutrition <span>Analytics</span></h1>
+
+    <p>
+        Understand your nutrition trends through visual analytics.
+    </p>
+
+</section>
+
+
+<section class="summary-grid">
+
+    <div class="summary-card">
+        <span>🔥 Average Calories</span>
+        <strong>1,840</strong>
+        <small>kcal/day</small>
+    </div>
+
+    <div class="summary-card">
+        <span>🥩 Protein</span>
+        <strong>72g</strong>
+        <small>daily average</small>
+    </div>
+
+    <div class="summary-card">
+        <span>🍞 Carbohydrates</span>
+        <strong>215g</strong>
+        <small>daily average</small>
+    </div>
+
+    <div class="summary-card">
+        <span>🥑 Fat</span>
+        <strong>54g</strong>
+        <small>daily average</small>
+    </div>
+
+</section>
+
+
+<section class="charts-grid">
+
+    <div class="chart-card">
+
+        <h2>Weekly Calories</h2>
+
+        <canvas id="calorieChart"></canvas>
+
+    </div>
+
+
+    <div class="chart-card">
+
+        <h2>Macronutrients</h2>
+
+        <canvas id="macroChart"></canvas>
+
+    </div>
+
+</section>
+
+<script>
+
+new Chart(document.getElementById("calorieChart"), {
+
+    type: "line",
+
+    data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+
+        datasets: [{
+            label: "Calories",
+            data: [1800, 1950, 1720, 2100, 1850, 1920, 1840],
+            borderWidth: 3,
+            tension: 0.4
+        }]
+    }
+
+});
+
+
+new Chart(document.getElementById("macroChart"), {
+
+    type: "doughnut",
+
+    data: {
+
+        labels: [
+            "Protein",
+            "Carbohydrates",
+            "Fat"
+        ],
+
+        datasets: [{
+
+            data: [25, 50, 25]
+
+        }]
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

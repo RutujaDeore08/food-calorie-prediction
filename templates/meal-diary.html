@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Smart Meal Diary | NutriCal AI{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <span>DAILY NUTRITION</span>
+
+    <h1>Smart Meal <span>Diary</span></h1>
+
+    <p>
+        Keep track of everything you eat throughout the day.
+    </p>
+
+</section>
+
+
+<section class="dashboard">
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+            <span>🔥 Calories</span>
+            <strong id="totalCalories">0</strong>
+            <small>/ 2000 kcal</small>
+        </div>
+
+        <div class="summary-card">
+            <span>🥩 Protein</span>
+            <strong>68g</strong>
+            <small>/ 100g</small>
+        </div>
+
+        <div class="summary-card">
+            <span>🍞 Carbs</span>
+            <strong>145g</strong>
+            <small>/ 250g</small>
+        </div>
+
+        <div class="summary-card">
+            <span>🥑 Fat</span>
+            <strong>42g</strong>
+            <small>/ 65g</small>
+        </div>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <h2>Add Meal</h2>
+
+        <div class="form-row">
+
+            <input
+                id="mealName"
+                type="text"
+                placeholder="Food name"
+            >
+
+            <select id="mealType">
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Dinner</option>
+                <option>Snack</option>
+            </select>
+
+            <input
+                id="mealCalories"
+                type="number"
+                placeholder="Calories"
+            >
+
+            <button onclick="addMeal()" class="primary-btn">
+                + Add Meal
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <h2>Today's Meals</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Meal</th>
+                    <th>Type</th>
+                    <th>Calories</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="mealTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+{% endblock %}

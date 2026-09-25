@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}NutriCal AI{% endblock %}
+    </title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="{{ url_for('home') }}" class="logo">
+
+            <span class="logo-icon">
+                🥗
+            </span>
+
+            <span>
+                NutriCal <b>AI</b>
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('features') }}">
+                Features
+            </a>
+
+            <a href="{{ url_for('about') }}">
+                About
+            </a>
+
+            <a href="{{ url_for('contact') }}">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <a href="{{ url_for('predict') }}"
+           class="nav-btn">
+
+            Get Started
+
+        </a>
+
+    </header>
+
+
+    <!-- PAGE CONTENT -->
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    🥗 NutriCal AI
+                </h3>
+
+                <p>
+                    AI-powered food calorie and
+                    nutrition analysis.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+
+                <a href="{{ url_for('features') }}">
+                    Features
+                </a>
+
+                <a href="{{ url_for('about') }}">
+                    About
+                </a>
+
+                <a href="{{ url_for('contact') }}">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Features
+                </h4>
+
+                <a href="{{ url_for('predict') }}">
+                    AI Calories Prediction
+                </a>
+
+                <a href="{{ url_for('meal_diary') }}">
+                    Smart Meal Diary
+                </a>
+
+                <a href="{{ url_for('analytics') }}">
+                    Nutrition Analytics
+                </a>
+
+                <a href="{{ url_for('goal') }}">
+                    Goal Tracking
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 NutriCal AI. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+{% extends "base.html" %}
+
+{% block title %}Features | NutriCal AI{% endblock %}
+
+{% block content %}
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <span class="badge">✦ NUTRICAL AI FEATURES</span>
+
+    <h1>
+        Powerful Features for
+        <span>Smarter Nutrition</span>
+    </h1>
+
+    <p>
+        Explore intelligent tools designed to help you understand
+        your food, track your nutrition and achieve your health goals.
+    </p>
+
+</section>
+
+
+<!-- ================= MAIN FEATURES ================= -->
+
+<section class="features-section">
+
+    <div class="section-heading">
+
+        <span>EXPLORE OUR FEATURES</span>
+
+        <h2>
+            Everything You Need in One Place
+        </h2>
+
+        <p>
+            NutriCal AI combines calorie prediction, meal tracking,
+            nutrition analytics and goal management.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <!-- AI CALORIE PREDICTION -->
+
+        <a href="{{ url_for('calories') }}" class="feature-card big">
+
+            <div class="feature-icon">
+                🔥
+            </div>
+
+            <h3>
+                AI Calorie Prediction
+            </h3>
+
+            <p>
+                Estimate the calories in your food using
+                intelligent calorie analysis.
+            </p>
+
+            <div class="feature-points">
+
+                <span>✓ Food calorie estimation</span>
+                <span>✓ Quantity-based calculation</span>
+                <span>✓ Nutrition information</span>
+
+            </div>
+
+            <span class="feature-link">
+                Start Prediction →
+            </span>
+
+        </a>
+
+
+        <!-- SMART MEAL DIARY -->
+
+        <a href="{{ url_for('meal_diary') }}" class="feature-card big">
+
+            <div class="feature-icon">
+                🍽️
+            </div>
+
+            <h3>
+                Smart Meal Diary
+            </h3>
+
+            <p>
+                Keep track of your daily breakfast, lunch,
+                dinner and snack records.
+            </p>
+
+            <div class="feature-points">
+
+                <span>✓ Daily meal records</span>
+                <span>✓ Breakfast, lunch and dinner</span>
+                <span>✓ Easy meal tracking</span>
+
+            </div>
+
+            <span class="feature-link">
+                Open Meal Diary →
+            </span>
+
+        </a>
+
+
+        <!-- NUTRITION ANALYTICS -->
+
+        <a href="{{ url_for('analytics') }}" class="feature-card big">
+
+            <div class="feature-icon">
+                📊
+            </div>
+
+            <h3>
+                Nutrition Analytics
+            </h3>
+
+            <p>
+                Visualize your calorie and nutrition data
+                using simple and attractive charts.
+            </p>
+
+            <div class="feature-points">
+
+                <span>✓ Calorie charts</span>
+                <span>✓ Macronutrient analysis</span>
+                <span>✓ Daily nutrition insights</span>
+
+            </div>
+
+            <span class="feature-link">
+                View Analytics →
+            </span>
+
+        </a>
+
+
+        <!-- FOOD ANALYSIS -->
+
+        <a href="{{ url_for('food_analysis') }}" class="feature-card big">
+
+            <div class="feature-icon">
+                🧠
+            </div>
+
+            <h3>
+                Intelligent Food Analysis
+            </h3>
+
+            <p>
+                Analyze food information and understand
+                its nutritional composition.
+            </p>
+
+            <div class="feature-points">
+
+                <span>✓ Food information</span>
+                <span>✓ Nutritional values</span>
+                <span>✓ Smart food insights</span>
+
+            </div>
+
+            <span class="feature-link">
+                Analyze Food →
+            </span>
+
+        </a>
+
+
+        <!-- GOAL TRACKING -->
+
+        <a href="{{ url_for('goal') }}" class="feature-card big">
+
+            <div class="feature-icon">
+                🎯
+            </div>
+
+            <h3>
+                Goal Tracking
+            </h3>
+
+            <p>
+                Set your nutrition goals and monitor your
+                progress over time.
+            </p>
+
+            <div class="feature-points">
+
+                <span>✓ Set nutrition goals</span>
+                <span>✓ Monitor progress</span>
+                <span>✓ Track daily targets</span>
+
+            </div>
+
+            <span class="feature-link">
+                Track Goals →
+            </span>
+
+        </a>
+
+
+        <!-- RESPONSIVE DESIGN -->
+
+        <div class="feature-card big">
+
+            <div class="feature-icon">
+                📱
+            </div>
+
+            <h3>
+                Responsive Design
+            </h3>
+
+            <p>
+                Access NutriCal AI comfortably on laptops,
+                tablets and mobile devices.
+            </p>
+
+            <div class="feature-points">
+
+                <span>✓ Laptop friendly</span>
+                <span>✓ Tablet compatible</span>
+                <span>✓ Mobile responsive</span>
+
+            </div>
+
+            <span class="feature-link">
+                Explore NutriCal AI →
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how-it-works">
+
+    <div class="section-heading">
+
+        <span>HOW IT WORKS</span>
+
+        <h2>
+            Simple Steps to Better Nutrition
+        </h2>
+
+        <p>
+            Start using NutriCal AI in just a few simple steps.
+        </p>
+
+    </div>
+
+
+    <div class="steps-grid">
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div class="step-icon">
+                🍎
+            </div>
+
+            <h3>
+                Enter Food
+            </h3>
+
+            <p>
+                Enter the food name and quantity you want
+                to analyze.
+            </p>
+
+        </div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div class="step-icon">
+                🤖
+            </div>
+
+            <h3>
+                AI Analysis
+            </h3>
+
+            <p>
+                NutriCal AI analyzes the food and estimates
+                its nutritional information.
+            </p>
+
+        </div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-icon">
+                📊
+            </div>
+
+            <h3>
+                View Results
+            </h3>
+
+            <p>
+                View calories, protein, carbohydrates,
+                fat and other nutrition information.
+            </p>
+
+        </div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <div class="step-icon">
+                🎯
+            </div>
+
+            <h3>
+                Track Goals
+            </h3>
+
+            <p>
+                Track your daily nutrition and work towards
+                your personal goals.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div>
+
+        <span>
+            START YOUR JOURNEY
+        </span>
+
+        <h2>
+            Understand Your Food Better.
+        </h2>
+
+        <p>
+            Use NutriCal AI to track calories and make
+            smarter nutrition decisions.
+        </p>
+
+    </div>
+
+
+    <a href="{{ url_for('calories') }}" class="primary-btn">
+        Start Analyzing →
+    </a>
+
+</section>
+
+
+{% endblock %}

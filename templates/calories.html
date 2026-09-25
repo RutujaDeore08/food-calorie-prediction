@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block title %}AI Calorie Prediction | NutriCal AI{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <span class="badge">✦ AI-POWERED ANALYSIS</span>
+
+    <h1>
+        AI Calorie Prediction
+    </h1>
+
+    <p>
+        Enter your food information and estimate calories
+        and nutritional values.
+    </p>
+
+</section>
+
+
+<section class="calorie-container">
+
+    <div class="calorie-card">
+
+        <div class="card-icon">
+            🔥
+        </div>
+
+        <h2>
+            Calculate Food Calories
+        </h2>
+
+        <p>
+            Enter the food name and quantity to get
+            an estimated calorie value.
+        </p>
+
+
+        <form action="#" method="POST">
+
+            <div class="form-group">
+
+                <label for="food">
+                    Food Name
+                </label>
+
+                <input
+                    type="text"
+                    id="food"
+                    name="food"
+                    placeholder="Example: Apple"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity (grams)
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    placeholder="Example: 100"
+                    min="1"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit" class="primary-btn">
+                🔍 Predict Calories
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <div class="result-icon">
+            🥗
+        </div>
+
+        <h2>
+            Nutrition Result
+        </h2>
+
+        <p>
+            Your calorie and nutrition result will
+            appear here after analysis.
+        </p>
+
+
+        <div class="nutrition-result">
+
+            <div>
+                <strong>0</strong>
+                <span>Calories</span>
+            </div>
+
+            <div>
+                <strong>0g</strong>
+                <span>Protein</span>
+            </div>
+
+            <div>
+                <strong>0g</strong>
+                <span>Carbs</span>
+            </div>
+
+            <div>
+                <strong>0g</strong>
+                <span>Fat</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="info-section">
+
+    <div class="section-heading">
+
+        <span>SMART NUTRITION</span>
+
+        <h2>
+            Make Better Food Decisions
+        </h2>
+
+        <p>
+            NutriCal AI helps you understand the nutritional
+            value of your meals and track your daily intake.
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <div class="feature-icon">
+                🔥
+            </div>
+
+            <h3>
+                Calorie Estimation
+            </h3>
+
+            <p>
+                Estimate the calories present in your
+                selected food.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="feature-icon">
+                💪
+            </div>
+
+            <h3>
+                Protein Tracking
+            </h3>
+
+            <p>
+                Monitor protein intake to support
+                your nutrition goals.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="feature-icon">
+                📊
+            </div>
+
+            <h3>
+                Nutrition Insights
+            </h3>
+
+            <p>
+                Understand calories and macronutrients
+                through simple analysis.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

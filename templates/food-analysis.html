@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Food Analysis | NutriCal AI{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <span>INTELLIGENT FOOD ANALYSIS</span>
+
+    <h1>Analyze Your <span>Food</span></h1>
+
+    <p>
+        Get nutritional insights about your food.
+    </p>
+
+</section>
+
+
+<section class="analysis-box">
+
+    <div class="input-panel">
+
+        <h2>Food Information</h2>
+
+        <input
+            id="analysisFood"
+            type="text"
+            placeholder="Enter food name"
+        >
+
+        <button onclick="analyzeFood()" class="primary-btn full">
+            Analyze Food
+        </button>
+
+    </div>
+
+
+    <div id="analysisResult" class="analysis-result">
+
+        <div class="empty-state">
+            🥗
+            <h3>Ready to Analyze</h3>
+            <p>
+                Enter a food item to view nutritional information.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

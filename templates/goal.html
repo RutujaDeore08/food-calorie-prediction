@@ -1,0 +1,455 @@
+{% extends "base.html" %}
+
+{% block title %}Goal Tracking | NutriCal AI{% endblock %}
+
+{% block content %}
+
+<section class="goal-page">
+
+    <div class="goal-container">
+
+        <!-- HEADER -->
+
+        <div class="goal-header">
+
+            <span class="goal-label">
+                ✦ PERSONAL GOAL TRACKER
+            </span>
+
+            <h1>
+                Track Your
+                <span>Health Goals.</span>
+            </h1>
+
+            <p>
+                Set your nutrition goals, monitor your progress
+                and stay consistent every day.
+            </p>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="goal-summary-grid">
+
+            <div class="goal-summary-card">
+
+                <div class="goal-summary-icon">
+                    🔥
+                </div>
+
+                <div>
+                    <span>Daily Calories</span>
+                    <strong>1,850</strong>
+                    <small>kcal</small>
+                </div>
+
+            </div>
+
+
+            <div class="goal-summary-card">
+
+                <div class="goal-summary-icon">
+                    ⚖️
+                </div>
+
+                <div>
+                    <span>Current Weight</span>
+                    <strong>62</strong>
+                    <small>kg</small>
+                </div>
+
+            </div>
+
+
+            <div class="goal-summary-card">
+
+                <div class="goal-summary-icon">
+                    🎯
+                </div>
+
+                <div>
+                    <span>Target Weight</span>
+                    <strong>58</strong>
+                    <small>kg</small>
+                </div>
+
+            </div>
+
+
+            <div class="goal-summary-card">
+
+                <div class="goal-summary-icon">
+                    🔥
+                </div>
+
+                <div>
+                    <span>Current Streak</span>
+                    <strong>12</strong>
+                    <small>days</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAIN GOAL SECTION -->
+
+        <div class="goal-main-grid">
+
+            <!-- PROGRESS -->
+
+            <div class="goal-progress-card">
+
+                <div class="goal-card-heading">
+
+                    <div>
+                        <span>YOUR PROGRESS</span>
+                        <h2>Weight Goal</h2>
+                    </div>
+
+                    <span class="goal-status">
+                        On Track
+                    </span>
+
+                </div>
+
+
+                <div class="goal-weight-display">
+
+                    <div>
+                        <small>Start</small>
+                        <strong>65 kg</strong>
+                    </div>
+
+                    <div class="goal-target-circle">
+
+                        <strong>70%</strong>
+
+                        <span>
+                            Progress
+                        </span>
+
+                    </div>
+
+                    <div>
+                        <small>Target</small>
+                        <strong>58 kg</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="goal-progress-track">
+
+                    <div class="goal-progress-fill"></div>
+
+                </div>
+
+
+                <div class="goal-progress-info">
+
+                    <span>
+                        3 kg lost
+                    </span>
+
+                    <span>
+                        1 kg remaining
+                    </span>
+
+                </div>
+
+
+                <div class="goal-message">
+
+                    🎉 You're doing great!
+                    Keep following your nutrition plan.
+
+                </div>
+
+            </div>
+
+
+            <!-- SET GOAL -->
+
+            <div class="goal-setting-card">
+
+                <div class="goal-card-heading">
+
+                    <div>
+                        <span>SET A GOAL</span>
+                        <h2>Personal Target</h2>
+                    </div>
+
+                    <div class="goal-setting-icon">
+                        🎯
+                    </div>
+
+                </div>
+
+
+                <form>
+
+                    <div class="goal-form-group">
+
+                        <label>
+                            Goal Type
+                        </label>
+
+                        <select>
+
+                            <option>
+                                Weight Loss
+                            </option>
+
+                            <option>
+                                Weight Gain
+                            </option>
+
+                            <option>
+                                Maintain Weight
+                            </option>
+
+                            <option>
+                                Daily Calories
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="goal-form-row">
+
+                        <div class="goal-form-group">
+
+                            <label>
+                                Current
+                            </label>
+
+                            <input
+                                type="number"
+                                value="62"
+                            >
+
+                        </div>
+
+
+                        <div class="goal-form-group">
+
+                            <label>
+                                Target
+                            </label>
+
+                            <input
+                                type="number"
+                                value="58"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="goal-form-group">
+
+                        <label>
+                            Target Date
+                        </label>
+
+                        <input
+                            type="date"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="goal-save-button"
+                    >
+                        Save Goal →
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- DAILY TARGETS -->
+
+        <div class="goal-section-heading">
+
+            <span>DAILY TARGETS</span>
+
+            <h2>
+                Nutrition Overview
+            </h2>
+
+        </div>
+
+
+        <div class="goal-nutrition-grid">
+
+            <div class="goal-nutrition-card">
+
+                <div class="goal-nutrition-top">
+
+                    <span>🔥</span>
+
+                    <strong>78%</strong>
+
+                </div>
+
+                <h3>Calories</h3>
+
+                <p>
+                    1,450 / 1,850 kcal
+                </p>
+
+                <div class="goal-small-progress">
+                    <div style="width:78%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="goal-nutrition-card">
+
+                <div class="goal-nutrition-top">
+
+                    <span>🥩</span>
+
+                    <strong>65%</strong>
+
+                </div>
+
+                <h3>Protein</h3>
+
+                <p>
+                    78 / 120 g
+                </p>
+
+                <div class="goal-small-progress">
+                    <div style="width:65%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="goal-nutrition-card">
+
+                <div class="goal-nutrition-top">
+
+                    <span>🍞</span>
+
+                    <strong>72%</strong>
+
+                </div>
+
+                <h3>Carbohydrates</h3>
+
+                <p>
+                    145 / 200 g
+                </p>
+
+                <div class="goal-small-progress">
+                    <div style="width:72%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="goal-nutrition-card">
+
+                <div class="goal-nutrition-top">
+
+                    <span>🥑</span>
+
+                    <strong>58%</strong>
+
+                </div>
+
+                <h3>Healthy Fats</h3>
+
+                <p>
+                    35 / 60 g
+                </p>
+
+                <div class="goal-small-progress">
+                    <div style="width:58%"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- WEEKLY ACTIVITY -->
+
+        <div class="goal-week-card">
+
+            <div class="goal-week-header">
+
+                <div>
+                    <span>CONSISTENCY</span>
+                    <h2>Weekly Activity</h2>
+                </div>
+
+                <strong>
+                    5 / 7 Days
+                </strong>
+
+            </div>
+
+
+            <div class="goal-week-days">
+
+                <div class="goal-day completed">
+                    <span>Mon</span>
+                    <strong>✓</strong>
+                </div>
+
+                <div class="goal-day completed">
+                    <span>Tue</span>
+                    <strong>✓</strong>
+                </div>
+
+                <div class="goal-day completed">
+                    <span>Wed</span>
+                    <strong>✓</strong>
+                </div>
+
+                <div class="goal-day completed">
+                    <span>Thu</span>
+                    <strong>✓</strong>
+                </div>
+
+                <div class="goal-day completed">
+                    <span>Fri</span>
+                    <strong>✓</strong>
+                </div>
+
+                <div class="goal-day">
+                    <span>Sat</span>
+                    <strong>–</strong>
+                </div>
+
+                <div class="goal-day">
+                    <span>Sun</span>
+                    <strong>–</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
