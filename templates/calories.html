@@ -38,7 +38,7 @@
         </p>
 
 
-        <form action="#" method="POST">
+        <form id="calorieForm">
 
             <div class="form-group">
 
@@ -94,7 +94,7 @@
             Nutrition Result
         </h2>
 
-        <p>
+        <p id="resultStatusText">
             Your calorie and nutrition result will
             appear here after analysis.
         </p>
@@ -103,22 +103,22 @@
         <div class="nutrition-result">
 
             <div>
-                <strong>0</strong>
+                <strong id="calorieResult">0</strong>
                 <span>Calories</span>
             </div>
 
             <div>
-                <strong>0g</strong>
+                <strong id="proteinResult">0g</strong>
                 <span>Protein</span>
             </div>
 
             <div>
-                <strong>0g</strong>
+                <strong id="carbsResult">0g</strong>
                 <span>Carbs</span>
             </div>
 
             <div>
-                <strong>0g</strong>
+                <strong id="fatResult">0g</strong>
                 <span>Fat</span>
             </div>
 
@@ -127,6 +127,48 @@
     </div>
 
 </section>
+
+<script>
+document.getElementById("calorieForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const food = document.getElementById("food").value.trim();
+    const qty = document.getElementById("quantity").value.trim();
+    if (!food || !qty) return;
+
+    const btn = e.target.querySelector("button[type='submit']");
+    const origText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "⏳ Calculating...";
+
+    try {
+        const response = await fetch("/api/parse-meal", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: `${qty}g ${food}` })
+        });
+        const data = await response.json();
+        if (!response.ok || !data.success) {
+            throw new Error(data.error || "Prediction failed");
+        }
+
+        document.getElementById("calorieResult").textContent = Math.round(data.total_calories);
+        document.getElementById("proteinResult").textContent = data.total_protein + "g";
+        document.getElementById("carbsResult").textContent = data.total_carbs + "g";
+        document.getElementById("fatResult").textContent = data.total_fat + "g";
+
+        const matchedItem = data.items && data.items[0];
+        if (matchedItem) {
+            document.getElementById("resultStatusText").textContent =
+                `Identified: ${matchedItem.matched_food} (${matchedItem.weight_g}g, ${matchedItem.category})`;
+        }
+    } catch (err) {
+        alert("Error: " + err.message);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = origText;
+    }
+});
+</script>
 
 
 <section class="info-section">

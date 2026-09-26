@@ -2,14 +2,14 @@
   "best_model": "RidgeRegression",
   "metrics": {
     "RandomForest": {
-      "r2": 0.9948,
-      "mae": 11.87,
-      "rmse": 46.85
+      "r2": 0.9946,
+      "mae": 11.89,
+      "rmse": 47.75
     },
     "GradientBoosting": {
-      "r2": 0.996,
-      "mae": 10.52,
-      "rmse": 41.23
+      "r2": 0.9968,
+      "mae": 10.3,
+      "rmse": 36.79
     },
     "RidgeRegression": {
       "r2": 0.9999,

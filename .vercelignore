@@ -1,0 +1,9 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.git
+.gitignore
+test_app.py
+train_model.py
+PROJECT_REPORT.md

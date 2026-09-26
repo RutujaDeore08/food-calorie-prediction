@@ -8,13 +8,25 @@ import sqlite3
 import json
 import os
 from datetime import datetime, timedelta
+import shutil
 
-DB_PATH = os.path.join("data", "food_calorie.db")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def get_db_path():
+    if os.environ.get("VERCEL"):
+        tmp_db = "/tmp/food_calorie.db"
+        src_db = os.path.join(BASE_DIR, "data", "food_calorie.db")
+        if not os.path.exists(tmp_db) and os.path.exists(src_db):
+            shutil.copy2(src_db, tmp_db)
+        return tmp_db
+    data_dir = os.path.join(BASE_DIR, "data")
+    os.makedirs(data_dir, exist_ok=True)
+    return os.path.join(data_dir, "food_calorie.db")
 
 
 def get_connection():
-    os.makedirs("data", exist_ok=True)
-    conn = sqlite3.connect(DB_PATH)
+    db_path = get_db_path()
+    conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
 

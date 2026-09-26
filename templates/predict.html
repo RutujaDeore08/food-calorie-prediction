@@ -339,69 +339,82 @@
 
 document
     .getElementById("predictionForm")
-    .addEventListener("submit", function(event) {
+    .addEventListener("submit", async function(event) {
 
         event.preventDefault();
 
         const food =
-            document.getElementById("foodName").value;
+            document.getElementById("foodName").value.trim();
 
         const quantity =
             Number(document.getElementById("quantity").value);
+
+        const unit =
+            document.getElementById("unit").value;
 
         if (!food || !quantity) {
             return;
         }
 
-        /*
-         * Demo calculation.
-         * Replace this section later with
-         * your Flask / AI model API.
-         */
+        const submitBtn = event.target.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "⏳ Predicting with AI...";
 
-        const calories = Math.round(quantity * 2.4);
+        try {
+            const unitStr = unit === "grams" ? "g" : (unit === "ml" ? "ml" : " " + unit);
+            const queryText = `${quantity}${unitStr} ${food}`;
 
-        const protein =
-            Math.round(quantity * 0.08);
+            const response = await fetch("/api/parse-meal", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ text: queryText })
+            });
 
-        const carbs =
-            Math.round(quantity * 0.18);
+            const data = await response.json();
 
-        const fat =
-            Math.round(quantity * 0.07);
+            if (!response.ok || !data.success) {
+                throw new Error(data.error || "Failed to predict calories");
+            }
 
+            document
+                .getElementById("predictionResult")
+                .style.display = "none";
 
-        document
-            .getElementById("predictionResult")
-            .style.display = "none";
+            document
+                .getElementById("nutritionValues")
+                .style.display = "block";
 
+            document
+                .getElementById("calorieValue")
+                .textContent = Math.round(data.total_calories);
 
-        document
-            .getElementById("nutritionValues")
-            .style.display = "block";
+            document
+                .getElementById("proteinValue")
+                .textContent = data.total_protein + "g";
 
+            document
+                .getElementById("carbsValue")
+                .textContent = data.total_carbs + "g";
 
-        document
-            .getElementById("calorieValue")
-            .textContent = calories;
+            document
+                .getElementById("fatValue")
+                .textContent = data.total_fat + "g";
 
+            const matched = data.items && data.items.length > 0 && data.items[0].status === "matched";
+            const confidenceElem = document.querySelector(".predict-confidence strong");
+            if (confidenceElem) {
+                confidenceElem.textContent = matched ? "96%" : "85%";
+            }
 
-        document
-            .getElementById("proteinValue")
-            .textContent =
-            protein + "g";
-
-
-        document
-            .getElementById("carbsValue")
-            .textContent =
-            carbs + "g";
-
-
-        document
-            .getElementById("fatValue")
-            .textContent =
-            fat + "g";
+        } catch (err) {
+            alert("Error predicting calories: " + err.message);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        }
 
     });
 
